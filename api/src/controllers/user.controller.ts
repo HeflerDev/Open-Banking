@@ -1,12 +1,12 @@
 import * as Koa from 'koa'
 import Router from 'koa-router'
-import User from "models/User";
+
 import jsonwebtoken from 'jsonwebtoken'
 
 export interface LoginDetails {
-    username: string,
-    password: string,
-    passwordConf: string
+    username?: string,
+    password?: string
+    passwordConf?: string
 }
 
 const routerOpts: Router.IRouterOptions = {
@@ -16,6 +16,7 @@ const routerOpts: Router.IRouterOptions = {
 const router: Router = new Router(routerOpts)
 
 router.post('/login', async (ctx: Koa.Context) => {
+    console.log(ctx.request.body)
     let login: LoginDetails = ctx.request.body
     if(login.username && login.password && login.password === login.passwordConf) {
         console.log(login)

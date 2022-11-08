@@ -2,8 +2,8 @@ import Koa from 'koa'
 import Knex from 'knex'
 import bodyParser from "koa-bodyparser";
 import { Model } from "objection";
-import knexConfig from "knexfile";
-import userController from "src/controllers/user.controller";
+import knexConfig from "../knexfile";
+import userController from "./controllers/user.controller";
 import jwt from 'koa-jwt'
 import cors from '@koa/cors'
 

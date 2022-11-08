@@ -3,13 +3,16 @@
     "target": "ES2016",
     "module": "commonjs",
     "esModuleInterop": true,
-    "baseUrl": "./",
     "lib": ["es2016"],
     "outDir": "dist",
-    "rootDir": "src",
+    "rootDir": "./",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src"]
+    },
     "noImplicitAny": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
+    "emitDecoratorMetadata": true
   },
   "include": ["./"]
 }
