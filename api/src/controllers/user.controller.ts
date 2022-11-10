@@ -16,7 +16,6 @@ const routerOpts: Router.IRouterOptions = {
 const router: Router = new Router(routerOpts)
 
 router.post('/login', async (ctx: Koa.Context) => {
-    console.log(ctx.request.body)
     let login: LoginDetails = ctx.request.body
     if(login.username && login.password && login.password === login.passwordConf) {
         console.log(login)
