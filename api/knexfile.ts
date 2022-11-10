@@ -1,10 +1,12 @@
 const knexConfig = {
     development: {
-        client: 'postgres',
+        client: 'pg',
         connection: {
-            user : process.env.PSQL_USER,
-            password : process.env.PSQL_PASSWORD,
-            database : process.env.PSQL_DATABASE
+            host: 'postgres',
+            port: process.env.DB_PORT || 5432,
+            user: process.env.DB_USER || 'postgres',
+            password: 'postgres',
+            database: 'open_bank'
         }
     },
     migrations: {

@@ -1,1 +1,1 @@
-docker exec -it postgres_container psql open_bank postgres
+docker exec -it database psql open_bank postgres
