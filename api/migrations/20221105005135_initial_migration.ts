@@ -9,7 +9,7 @@ export async function up(knex: Knex): Promise<void> {
     })
     await knex.schema.createTable('banks',(table:Knex.TableBuilder) => {
         table.increments('id').primary()
-        table.string("name")
+        table.string("data")
         table.uuid("user_id")
             .notNullable()
             .references("id")
