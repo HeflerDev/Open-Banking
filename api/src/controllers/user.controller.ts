@@ -1,12 +1,12 @@
 import * as Koa from 'koa'
 import Router from 'koa-router'
-import User from "models/User";
+
 import jsonwebtoken from 'jsonwebtoken'
 
 export interface LoginDetails {
-    username: string,
-    password: string,
-    passwordConf: string
+    username?: string,
+    password?: string
+    passwordConf?: string
 }
 
 const routerOpts: Router.IRouterOptions = {
