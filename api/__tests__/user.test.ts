@@ -25,4 +25,26 @@ describe("Testing POSTS endpoints", () => {
         expect(response.status).not.toBe(200)
         expect(response.status).toBe(500)
     });
+    it('should not validate bad username', async function () {
+        const response = await request(app.callback())
+            .post("/public/login")
+            .send({
+                username: "",
+                password: "valid",
+                passwordConfig: "invalid"
+            })
+        expect(response.status).not.toBe(200)
+        expect(response.status).toBe(500)
+    });
+    it('should not validate different passwords', async function () {
+        const response = await request(app.callback())
+            .post("/public/login")
+            .send({
+                username: "valid",
+                password: "valid",
+                passwordConfig: "invalid"
+            })
+        expect(response.status).not.toBe(200)
+        expect(response.status).toBe(500)
+    });
 })
