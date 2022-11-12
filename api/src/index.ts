@@ -34,7 +34,7 @@ app.use(jwt({
 
 app.use(userController.routes())
 app.use(userController.allowedMethods())
-app.use(userController.routes())
+app.use(bankController.routes())
 app.use(bankController.allowedMethods())
 
 app.use(bodyParser());
@@ -43,6 +43,9 @@ app.use(async (ctx:Koa.Context) => {
 });
 
 app.on('error', console.error);
-app.listen(4000);
+
+if(require.main === module) {
+    app.listen(4000);
+}
 
 export default app;

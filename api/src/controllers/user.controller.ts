@@ -18,13 +18,14 @@ const router: Router = new Router(routerOpts)
 router.post('/login', async (ctx: Koa.Context) => {
     let login: LoginDetails = ctx.request.body
     if(login.username && login.password && login.password === login.passwordConf) {
-        console.log(login)
         ctx.body = {
             token: jsonwebtoken.sign({
                 data: ctx.request.body,
                 exp: Math.floor(Date.now() / 1000) - (60 * 60) // 1 hour
             }, "secret")
         }
+    } else {
+        ctx.status = 500
     }
 })
 
