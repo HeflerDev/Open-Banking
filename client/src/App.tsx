@@ -1,11 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
+import Home from "./pages/Home";
 
 function App() {
+    // TODO: Create Virtual Routing
   return (
       <main>
-        Lorem Ipsum
+          <Home/>
       </main>
   );
 }
