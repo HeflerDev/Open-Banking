@@ -1,0 +1,35 @@
+@use "../assets/styles/variables/colors";
+
+.nav-container {
+  padding: 5px 10px;
+  background-color: colors.$primary;
+  color: colors.$white;
+
+  > .logo-block {
+    display: flex;
+    margin: auto 0;
+
+    > .text {
+      margin: auto 20px;
+      font-size: large;
+      font-weight: bold;
+    }
+  }
+
+  > .user-block {
+    display: flex;
+    justify-content: space-between;
+
+    > .buttons {
+      justify-content: space-around;
+    }
+
+    > .icons {
+      display: flex;
+
+      > div {
+        margin: auto 5px;
+      }
+    }
+  }
+}

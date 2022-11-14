@@ -1,5 +1,6 @@
+@import "assets/styles/variables/colors";
 @import "~bootstrap/scss/bootstrap";
-// TODO: Configure Application Style
+@import "assets/styles/patterns/buttons";
 
 main {
   min-height: 100vh;

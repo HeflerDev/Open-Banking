@@ -1,4 +1,5 @@
 import React from "react";
+import "./Home.scss"
 import {Navbar, Header} from "./components";
 
 const Home = () => {

@@ -42,7 +42,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - .:/client/src/App
+      - client/src/App
       - /app/node_modules
     stdin_open: true
     environment:
