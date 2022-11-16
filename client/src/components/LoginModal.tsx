@@ -16,7 +16,7 @@ export const LoginModal = () => {
             await axios.post("http://localhost:4000/login", {
                 email,
                 password
-            })
+            }, {withCredentials: true})
             navigate("/dashboard")
         } catch (error: any) {
             if (error.response) {

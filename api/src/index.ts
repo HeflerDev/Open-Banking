@@ -1,7 +1,9 @@
 import Koa from "koa"
 import dotenv from "dotenv";
-import cookie from "koa-cookie"
+// @ts-ignore
 import cors from "@koa/cors";
+
+const cookie = require("cca-koa-cookie")
 import db from "./config/Database.js";
 import router from "./routes";
 import bodyParser from "koa-bodyparser";
@@ -9,10 +11,11 @@ import bodyParser from "koa-bodyparser";
 dotenv.config();
 const app: Koa = new Koa();
 
+app.use(cookie)
 app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
-app.use(cookie());
 app.use(bodyParser())
 app.use(router.routes());
+app.use(router.allowedMethods())
 
 app.listen(4000, () => console.log('Server running at port 4000'));
 // TODO: Remove Comment

@@ -73,10 +73,9 @@ export const Login = async (ctx: Koa.Context) => {
                 id: userId
             }
         });
-
         ctx.cookies.set('refreshToken', refreshToken, {
             httpOnly: true,
-            maxAge: 24 * 60 * 60 * 1000
+            maxAge: 24 * 60 * 60 * 1000,
         });
         ctx.status = 200
         ctx.body = accessToken

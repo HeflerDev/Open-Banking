@@ -1,0 +1,32 @@
+@use "../../assets/styles/variables/colors";
+
+.dashboard-container {
+
+  .sidebar-block {
+    background-color: colors.$light;
+
+    > .user-block {
+      display: flex;
+      justify-content: space-between;
+
+      > .name {
+        font-size: large;
+        font-weight: bold;
+        color: colors.$primary;
+      }
+    }
+  }
+
+  .content-block {
+    .title {
+      font-weight: bold;
+      font-family: "DejaVu Sans", serif;
+    }
+
+    .search-bar {
+    }
+
+    .results-block {
+    }
+  }
+}
