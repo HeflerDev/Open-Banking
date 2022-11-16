@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import axios from "axios";
-import {Col, Row} from "react-bootstrap";
+import "./index.scss"
+import {Stack} from "react-bootstrap";
 
 export const RegisterModal = ({history}: any) => {
     const [data, setData] = useState({
@@ -35,25 +36,26 @@ export const RegisterModal = ({history}: any) => {
 
     return (
         <>
-            <form onSubmit={handleRegister}>
-                <Row>
-                    <Col xs={12}>
-                        <label htmlFor="username">Username</label>
-                        <input type="text" name={"username"} onChange={handleChange}/>
-                    </Col>
-                    <Col xs={12}>
-                        <label htmlFor="email">Email</label>
-                        <input type="text" name={"email"} onChange={handleChange}/>
-                    </Col>
-                    <Col>
-                        <label htmlFor="password">Password</label>
-                        <input type="text" name={"password"} onChange={handleChange}/>
-                    </Col>
-                    <Col>
-                        <label htmlFor="passwordConf">Password Confirmation</label>
-                        <input type="text" name={"passwordConf"} onChange={handleChange}/>
-                    </Col>
-                </Row>
+            <form onSubmit={handleRegister} className={"form-container"}>
+                <Stack className={"form-block"}>
+                    <label className={"label__register"} htmlFor="username">Username</label>
+                    <input className={"input__register"} type="text" name={"username"} onChange={handleChange}/>
+                </Stack>
+                <Stack className={"form-block"}>
+                    <label className={"label__register"} htmlFor="email">Email</label>
+                    <input className={"input__register"} type="text" name={"email"} onChange={handleChange}/>
+                </Stack>
+                <Stack className={"form-block"}>
+                    <label className={"label__register"} htmlFor="password">Password</label>
+                    <input className={"input__register"} type="text" name={"password"} onChange={handleChange}/>
+                </Stack>
+                <Stack className={"form-block"}>
+                    <label className={"label__register"} htmlFor="passwordConf">Password Confirmation</label>
+                    <input className={"input__register"} type="text" name={"passwordConf"} onChange={handleChange}/>
+                </Stack>
+                <Stack className={"form-block"}>
+                    <button type={"submit"} className={"btn__primary"}>Registrar</button>
+                </Stack>
             </form>
         </>
     )

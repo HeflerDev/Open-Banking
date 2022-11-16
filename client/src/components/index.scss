@@ -20,6 +20,11 @@
       color: blue;
       text-decoration: underline;
     }
+
+    &__error {
+      @extend .description;
+      color: red;
+    }
   }
 
   .input {
@@ -33,6 +38,10 @@
     &__login {
       @extend .input;
     }
+
+    &__register {
+      @extend .input;
+    }
   }
 
   .label {
@@ -41,6 +50,10 @@
     font-size: large;
 
     &__login {
+      @extend .label;
+    }
+
+    &__register {
       @extend .label;
     }
   }

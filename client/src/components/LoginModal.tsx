@@ -13,7 +13,7 @@ export const LoginModal = () => {
     const HandleAuth = async (e: any) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:4000/users", {
+            await axios.post("http://localhost:4000/login", {
                 email,
                 password
             })
@@ -37,6 +37,13 @@ export const LoginModal = () => {
                         Faça login na nossa plataforma ou <span onClick={handleLink}>registre-se</span>.
                     </div>
                 </Stack>
+                {
+                    msg && (
+                        <Stack className={"form-block description__error"}>
+                            {msg}
+                        </Stack>
+                    )
+                }
                 <Stack className={"form-block"}>
                     <label htmlFor="email" className={"label__login"}>Email</label>
                     <input type={"text"} className={"input__login"}
