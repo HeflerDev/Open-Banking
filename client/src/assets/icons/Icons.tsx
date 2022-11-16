@@ -21,3 +21,7 @@ export const IconDock = ({width = 20, height = 20, color = "black"}: IconProps) 
                                                                                          icon="fluent-mdl2:docker-logo"/>
 export const IconConf = ({width = 20, height = 20, color = "black"}: IconProps) => <Icon width={width} height={height}
                                                                                          color={color} icon={"fa:cog"}/>
+
+export const IconLogout = ({width = 20, height = 20, color = "black"}: IconProps) => <Icon icon={"clarity:logout-line"}
+                                                                                           width={width} height={height}
+                                                                                           color={color}/>

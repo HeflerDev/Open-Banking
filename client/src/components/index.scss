@@ -1,0 +1,47 @@
+@use "../assets/styles/variables/colors";
+
+.form-container {
+  max-width: 30%;
+  background-color: colors.$dark-transparent;
+  padding: 20px;
+  border-radius: 5px;
+
+  > .form-block {
+    margin: 20px auto;
+  }
+
+  > .description {
+    font-size: large;
+    font-family: "SansSerif";
+    font-weight: lighter;
+
+    span {
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+  }
+
+  .input {
+    background-color: colors.$light;
+    color: colors.$primary;
+    padding: 5px 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+
+    &__login {
+      @extend .input;
+    }
+  }
+
+  .label {
+    padding: 3px 10px;
+    color: colors.$primary;
+    font-size: large;
+
+    &__login {
+      @extend .label;
+    }
+  }
+}

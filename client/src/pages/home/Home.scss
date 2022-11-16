@@ -1,4 +1,4 @@
-@use "../assets/styles/variables/colors";
+@use "src/assets/styles/variables/colors";
 
 .nav-container {
   padding: 5px 10px;
@@ -35,7 +35,7 @@
 }
 
 .header-container {
-  background-image: url(../assets/images/header-image.png);
+  background-image: url("../../assets/images/header-image.png");
   min-height: 70vh;
   background-repeat: no-repeat;
   background-size: 100%;

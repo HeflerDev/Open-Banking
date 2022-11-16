@@ -1,4 +1,4 @@
-import app from "../src/index";
+import app from "@/*";
 import request from "supertest"
 
 describe("Testing POSTS endpoints", () => {
@@ -14,13 +14,13 @@ describe("Testing POSTS endpoints", () => {
         expect(response.text).toMatch("token")
     })
     it('should return error with bad input', async function () {
-       const response = await request(app.callback())
-           .post("/public/login")
-           .send({
-               username: "",
-               password: "default",
-               passwordConf: "wrong"
-           })
+        const response = await request(app.callback())
+            .post("/public/login")
+            .send({
+                username: "",
+                password: "default",
+                passwordConf: "wrong"
+            })
 
         expect(response.status).not.toBe(200)
         expect(response.status).toBe(500)
