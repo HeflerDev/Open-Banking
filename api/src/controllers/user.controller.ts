@@ -87,23 +87,26 @@ export const Login = async (ctx: Koa.Context) => {
     }
 }
 
-export const Logout = async (req: any, res: any) => {
-    const refreshToken = req.cookies.refreshToken;
-    if (!refreshToken) return res.sendStatus(204);
+export const Logout = async (ctx: Koa.Context) => {
+    const refreshToken = ctx.cookies.get("refreshToken");
+    if (!refreshToken) {
+        ctx.status = 204;
+        return ctx.toJSON()
+    }
     const user: any = await Users.findAll({
         where: {
             refresh_token: refreshToken
         }
     });
-    if (!user[0]) return res.sendStatus(204);
+    if (!user[0]) return ctx.status = 204
     const userId = user[0].id;
     await Users.update({refresh_token: null}, {
         where: {
             id: userId
         }
     });
-    res.clearCookie('refreshToken');
-    return res.sendStatus(200);
+    ctx.cookies.set("refreshToken", null)
+    ctx.status = 200
 }
 // TODO: Remove comment
 // import * as Koa from 'koa'

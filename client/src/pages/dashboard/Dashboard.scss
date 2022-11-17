@@ -1,13 +1,24 @@
 @use "../../assets/styles/variables/colors";
 
 .dashboard-container {
+  min-height: 100vh;
+
+  .sidebar {
+    background-color: colors.$light;
+    height: 100%;
+  }
 
   .sidebar-block {
-    background-color: colors.$light;
+
+    > button {
+      margin: 10px auto;
+      width: 100%;
+    }
 
     > .user-block {
       display: flex;
       justify-content: space-between;
+      padding: 20px;
 
       > .name {
         font-size: large;
@@ -19,14 +30,51 @@
 
   .content-block {
     .title {
+      margin: 20px auto;
       font-weight: bold;
       font-family: "DejaVu Sans", serif;
+      text-align: center;
     }
 
     .search-bar {
+      margin: 20px auto;
+      padding: 5px 10px;
+      border: solid colors.$primary 1px;
+      border-radius: 30px;
+      width: 100%;
+
+      > .input {
+        outline: none;
+        border: none;
+        background: transparent;
+        padding: 0 20px;
+        width: 80%;
+      }
     }
 
     .results-block {
     }
+  }
+}
+
+.result-container {
+  border: solid colors.$secondary 2px;
+  border-radius: 5px;
+  background-color: colors.$light;
+  padding: 10px;
+  margin: 10px auto;
+
+  .label {
+    font-size: large;
+    font-weight: bold;
+  }
+
+  .register-block {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .column {
+    margin: 30px auto;
   }
 }

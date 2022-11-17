@@ -4,7 +4,6 @@ import {Col, Container, Row} from "react-bootstrap";
 import {LoginModal, RegisterModal} from "../../components";
 
 const Home = ({type = "login"}: { type?: string }) => {
-    // TODO: Create View
     return (
         <>
             <div className={"header-container"}>
