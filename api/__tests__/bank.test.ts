@@ -1,4 +1,4 @@
-import app from "../src/index";
+import app from "@/*";
 import request from "supertest"
 
 interface Body {
@@ -10,15 +10,15 @@ describe("When dealing with bank data", () => {
     const PREFIX = "/banks"
 
     const testCase = (url: string, body?: Body | null) => {
-       return request(app.callback())
-           .post(PREFIX + url)
-           .send(body)
+        return request(app.callback())
+            .post(PREFIX + url)
+            .send(body)
     }
     it('should post accordingly', async function () {
-       const response = await testCase('/insert', {
-           data: "Custom Data",
-           user_id: 1,
-       })
+        const response = await testCase('/insert', {
+            data: "Custom Data",
+            user_id: 1,
+        })
         console.log(response.text)
         expect(response.status).toBe(200)
     });

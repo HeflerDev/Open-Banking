@@ -1,1 +1,0 @@
-docker exec -it database psql open_bank postgres
